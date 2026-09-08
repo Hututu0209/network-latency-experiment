@@ -29,6 +29,16 @@ Measures network round-trip time (RTT) using the system `ping` command.
 
 The script performs multiple measurements, calculates basic statistics, and visualizes the RTT measurements using Matplotlib.
 
+### `analyze_latency.py`
+
+Analyzes the RTT measurements stored in `latency_data.csv`.
+
+The script calculates descriptive statistics, detects outliers using 3-sigma and IQR methods, analyzes jitter, calculates outlier rates, and visualizes the results.
+
+### `latency_data.csv`
+
+Stores the RTT measurements collected by `ping_latency.py` for further analysis.
+
 ## Requirements
 
 - Python 3
@@ -38,6 +48,7 @@ Install Matplotlib with:
 
 ```bash
 pip install matplotlib
+```
 
 ## Usage
 
@@ -51,6 +62,12 @@ Run the ping RTT experiment:
 
 ```bash
 python ping_latency.py
+```
+
+Analyze the collected RTT data:
+
+```bash
+python analyze_latency.py
 ```
 
 ## Data Analysis
