@@ -53,23 +53,43 @@ Run the ping RTT experiment:
 python ping_latency.py
 ```
 
+## Data Analysis
+
+The RTT measurements were analyzed using several statistical methods:
+
+- Mean and median latency
+- Standard deviation
+- 3-sigma outlier detection
+- IQR-based outlier detection
+- Jitter analysis
+- Outlier rate calculation
+
+## Results
+
+For 100 RTT measurements:
+
+- Mean RTT: 31.40 ms
+- Median RTT: 31.00 ms
+- Standard deviation: 4.82 ms
+- Maximum RTT: 76.00 ms
+- 3-sigma outlier rate: 1.00%
+- IQR outlier rate: 11.00%
+- Mean jitter: 2.33 ms
+- Median jitter: 1.00 ms
+- Jitter outlier rate: 4.04%
+
+Most RTT measurements were concentrated around 30–32 ms, indicating relatively stable network latency. Two noticeable latency spikes were observed, including a maximum RTT of 76 ms. More measurements are needed to determine whether these spikes represent occasional network fluctuations or a recurring pattern.
+
 ## What I Learned
 
 Through this project, I practiced:
 
-- Measuring elapsed time in Python
+- Measuring network latency with Python
 - Running system commands from Python
 - Extracting values from command output
-- Calculating basic statistics
-- Visualizing measurement results
+- Reading and writing CSV files
+- Calculating descriptive statistics
+- Detecting outliers using 3-sigma and IQR methods
+- Calculating network jitter
+- Visualizing RTT and jitter measurements
 - Using Git and GitHub for version control
-
-## Future Improvements
-
-Possible extensions include:
-
-- Saving measurement results to CSV files
-- Comparing latency to different servers
-- Calculating standard deviation
-- Creating latency histograms
-- Investigating network jitter and packet loss
